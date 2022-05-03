@@ -23,6 +23,7 @@ body::-webkit-scrollbar-thumb{
 
 .my-theme > .light-theme{
   --primary-color : #111;
+  --secondary-color: #333;
   --primary-bg : #fff;
   --text-hilight: #18d8e6;
   --sidebar-bg : #eee;
@@ -32,6 +33,7 @@ body::-webkit-scrollbar-thumb{
 }
 .my-theme > .dark-theme{
   --primary-color:#fff;
+  --secondary-color: #fff;
   --primary-bg:#1F2336;
   --text-hilight: #ff2c25;
   --sidebar-bg : #3c3d47;
@@ -41,6 +43,7 @@ body::-webkit-scrollbar-thumb{
 }
 .my-theme > .blue-theme{
   --primary-color: #000;
+  --secondary-color: #fff;
   --primary-bg: #fff;
   --text-hilight: #0650c0;
   --sidebar-bg : #002763;
@@ -51,6 +54,7 @@ body::-webkit-scrollbar-thumb{
 }
 .my-theme > .purple-theme{
   --primary-color: #222;
+  --secondary-color: #fff;
   --primary-bg: #fff;
   --text-hilight: #A032AB;
   --sidebar-bg : #b623c4;
@@ -60,6 +64,7 @@ body::-webkit-scrollbar-thumb{
 }
 .my-theme > .orange-theme{
   --primary-color: #222;
+  --secondary-color: #fff;
   --primary-bg: #fff;
   --text-hilight: #FF5421;
   --sidebar-bg : #e94614;
@@ -69,6 +74,7 @@ body::-webkit-scrollbar-thumb{
 }
 .my-theme > .parate-theme{
   --primary-color: #222;
+  --secondary-color: #fff;
   --primary-bg: #fff;
   --text-hilight: #405d27;
   --sidebar-bg : #456826;
@@ -78,6 +84,7 @@ body::-webkit-scrollbar-thumb{
 }
 .my-theme > .magenta-theme{
   --primary-color: #222;
+  --secondary-color: #fff;
   --primary-bg: #fff;
   --text-hilight: #ec114c;
   --sidebar-bg : #eb134d;
@@ -87,6 +94,7 @@ body::-webkit-scrollbar-thumb{
 }
 .my-theme > .green-theme{
   --primary-color: #222;
+  --secondary-color: #fff;
   --primary-bg: #fff;
   --text-hilight: #04AA6D;
   --sidebar-bg : #04AA6D;
@@ -111,9 +119,12 @@ div, p, h1,h2,h3,h4,h5,h6,span,small,strong,section,article,sup,sub{
 .highlighted-title{
   color: var(--text-hilight) !important;
 }
-.portfolio-button{
-  background: var(--text-hilight) !important;
+.portfolio-button > * {
   color: var(--primary-bg) !important;  
+}
+.portfolio-button{
+  color: var(--primary-bg) !important;  
+  background: var(--text-hilight) !important;
 }
 .portfolio-button .css-i4bv87-MuiSvgIcon-root{
   color: var(--primary-bg);
@@ -151,10 +162,15 @@ div, p, h1,h2,h3,h4,h5,h6,span,small,strong,section,article,sup,sub{
   content: 'Projects';
 }
 .section-title::after{
-  content: '\2713';
+  content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: var(--text-hilight);
 }
 
 /* !!! common classes */
