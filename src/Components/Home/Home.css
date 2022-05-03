@@ -1,0 +1,37 @@
+.theme-select{
+  animation: theme-cog 2s running infinite forwards;
+}
+@keyframes theme-cog {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+
+/* theme color pallete */
+.theme-colors{
+  width: 300px;
+  padding: 20px 15px;
+  border-radius:0 6px 6px 0;
+  background: #eee;
+  box-shadow: 7px 4px 12px #00000030;
+  position: fixed;
+  top: 50%;
+  left: -100%;
+  transform: translateY(-50%);
+  z-index: 99999999;
+  transition: all 600ms ease-in-out;
+}
+.theme-colors.active{
+  left: 0;
+}
+
+.text-color{
+  color: var(--text-hilight) !important;
+}
+.theme-color-box{
+  height: 35px;
+  cursor: pointer;
+}

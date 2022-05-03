@@ -1,38 +1,206 @@
-.App {
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat&family=Teko&display=swap');
+
+/* custom scroll bar design */
+body::-webkit-scrollbar{
+  width: 6px;
+}
+.MuiDrawer-root .MuiDrawer-paperAnchorDockedLeft::-webkit-scrollbar{
+  width: 2px;
+}
+*::-webkit-scrollbar-track{
+  background: #eefff9;
+}
+body::-webkit-scrollbar-thumb{
+  background: linear-gradient(-60deg, #12df12 50%, #ff1138 50%);
+  border-radius: 6px;
+}
+
+/* !!! custom scroll bar design */
+
+
+/* theme colors generate */
+
+.my-theme > .light-theme{
+  --primary-color : #111;
+  --primary-bg : #fff;
+  --text-hilight: #18d8e6;
+  --sidebar-bg : #eee;
+  --sidebar-color: #222;
+  --lighting-bg : #b6b6b656;
+  --matching-color: #222;
+}
+.my-theme > .dark-theme{
+  --primary-color:#fff;
+  --primary-bg:#1F2336;
+  --text-hilight: #ff2c25;
+  --sidebar-bg : #3c3d47;
+  --sidebar-color: #f3efef;
+  --lighting-bg : #5c5c5c50;
+  --matching-color: #fff;
+}
+.my-theme > .blue-theme{
+  --primary-color: #000;
+  --primary-bg: #fff;
+  --text-hilight: #0650c0;
+  --sidebar-bg : #002763;
+  --sidebar-color: #e9f2ff;
+  --lighting-bg : #669ef342;
+  --matching-color: #fff;
+
+}
+.my-theme > .purple-theme{
+  --primary-color: #222;
+  --primary-bg: #fff;
+  --text-hilight: #A032AB;
+  --sidebar-bg : #b623c4;
+  --sidebar-color: #fdecff;
+  --lighting-bg : #d777e048;
+  --matching-color: #fff;
+}
+.my-theme > .orange-theme{
+  --primary-color: #222;
+  --primary-bg: #fff;
+  --text-hilight: #FF5421;
+  --sidebar-bg : #e94614;
+  --sidebar-color: #ffdace;
+  --lighting-bg : #ff7b5363;
+  --matching-color: #fff;
+}
+.my-theme > .parate-theme{
+  --primary-color: #222;
+  --primary-bg: #fff;
+  --text-hilight: #405d27;
+  --sidebar-bg : #456826;
+  --sidebar-color: #e3ffca;
+  --lighting-bg : #a0ca789a;
+  --matching-color: #fff;
+}
+.my-theme > .magenta-theme{
+  --primary-color: #222;
+  --primary-bg: #fff;
+  --text-hilight: #ec114c;
+  --sidebar-bg : #eb134d;
+  --sidebar-color: #ffe7ed;
+  --lighting-bg : #ecaebd9d;
+  --matching-color: #fff;
+}
+.my-theme > .green-theme{
+  --primary-color: #222;
+  --primary-bg: #fff;
+  --text-hilight: #04AA6D;
+  --sidebar-bg : #04AA6D;
+  --sidebar-color: #eefff9;
+  --lighting-bg : #9be0c76b;
+  --matching-color: #fff;
+}
+/* !!! theme colors generate */
+
+
+
+/* common classes */
+*{
+  font-family: 'Montserrat', sans-serif !important;
+  /* font-family: 'Lilita One', cursive !important; */
+/* font-family: 'Teko', sans-serif !important; */
+}
+div, p, h1,h2,h3,h4,h5,h6,span,small,strong,section,article,sup,sub{
+  color: var(--primary-color);
+}
+
+.highlighted-title{
+  color: var(--text-hilight) !important;
+}
+.portfolio-button{
+  background: var(--text-hilight) !important;
+  color: var(--primary-bg) !important;  
+}
+.portfolio-button .css-i4bv87-MuiSvgIcon-root{
+  color: var(--primary-bg);
+}
+.section-title{
   text-align: center;
+  font-size: 35px;
+  color: var(--text-hilight);
+  margin-bottom: 20px !important;
+  font-weight: 900;
+  font-family: 'Lilita One', cursive !important;
+  letter-spacing: 3px !important;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section-title::before{
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  font-size: 40px;
+  transform: translateX(-50%);
+  z-index: -1;
+  filter: opacity(.3);
+  text-transform: uppercase;
+}
+.section-title.skills-title::before{
+  content: 'Skills';
+}
+.section-title.services-title::before{
+  content: 'Services';
+}
+.section-title.projects-title::before{
+  content: 'Projects';
+}
+.section-title::after{
+  content: '\2713';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* !!! common classes */
+
+
+
+/* drawer color switching  */
+
+.MuiDrawer-root .MuiDrawer-paperAnchorDockedLeft::-webkit-scrollbar-thumb{
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+.content-body{
+  background: var(--primary-bg);
+}
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper, 
+.MuiDrawer-root.drawer,
+.MuiToolbar-root,
+.css-1l8j5k8{
+background: var(--sidebar-bg) !important;
+color: var(--sidebar-color) !important;
+transition: background .5s;
+}
+.MuiListItemIcon-root,
+.MuiListItemButton-root,
+.MuiListItemText-root,
+.MuiButtonBase-root,
+.logo-name,
+.css-10hburv-MuiTypography-root {
+  color: var(--sidebar-color) !important;
+}
+/* !!drawer color switching  */
+
+
+
+.text-white{
+  color: var(--primary-color);
+}
+.bolder-text{
+  font-weight: 900 !important;
+}
+.bold-text{
+  font-weight: 700 !important;
+}
+img{
+  max-width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

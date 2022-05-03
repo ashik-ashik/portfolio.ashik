@@ -1,0 +1,12 @@
+.about-thumb{
+  animation: about-thumb 2s infinite ease running alternate;
+}
+@keyframes about-thumb {
+  from{
+    transform: translate(-7px, -7px);
+  }
+  to{
+    transform: translate(7px, 7px);
+
+  }
+}

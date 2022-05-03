@@ -1,0 +1,27 @@
+.py-100{
+  padding: 100px 0px;
+}
+.titles{
+  color: var(--text-hilight);
+  font-weight: 900 !important;
+  /* display: none; */
+}
+.title-in{
+  display: block;
+}
+.hero-section{
+  background:var(--primary-bg) url(https://i.postimg.cc/bNRdywFM/IMG-0774-min.png) center right;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width:667px) {
+  .hero-section{
+    background-size: cover;
+  }
+  .title-name, .title-base{
+    font-size: 22px !important;
+  }
+  .titles{
+    font-size: 21px !important;
+  }
+}
