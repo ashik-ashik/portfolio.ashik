@@ -1,6 +1,7 @@
 
 #projects{
   padding: 50px 0;
+  width: 100% !important;
 }
 .section-title.projects-title{
   margin-bottom: 0 !important;
@@ -94,15 +95,58 @@
 }
 
 /* swiper slider */
+#projects .MuiBox-root{
+  width: 100% !important;
+}
+
 .swiper-wrapper{
   max-width: 1000px !important;
   display: flex;
   align-items: stretch !important;
   margin-top: 7px;
 }
+.swiper-wrapper .swiper-slide{
+  background: var(--sidebar-bg) !important;
+}
 .swiper-pagination-progressbar-fill{
   background: var(--sidebar-bg) !important;
 }
 .swiper-pagination-progressbar{
   z-index: 5;
+}
+@media screen and (max-width:1400px) {
+  .swiper-wrapper{
+    /* max-width: 1320px !important; */
+    width: 100% !important;
+  }
+}
+@media screen and (max-width:1024px) {
+  .swiper-wrapper{
+    max-width: 1000px !important;
+  }
+}
+@media screen and (max-width:991px) {
+  .swiper-wrapper{
+    max-width: 991px !important;
+  }
+}
+@media screen and (max-width:768px) {
+  .swiper-wrapper{
+    max-width: 768px !important;
+  }
+}
+@media screen and (max-width:667px) {
+  .swiper-wrapper{
+    max-width: 667px !important;
+  }
+}
+@media screen and (max-width:578px) {
+  .swiper-wrapper{
+    max-width: 578px !important;
+  }
+}
+@media screen and (max-width:420px) {
+  .swiper-wrapper{
+    max-width: 420px !important;
+  }
 }

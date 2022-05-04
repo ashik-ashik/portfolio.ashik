@@ -26,7 +26,7 @@ const Skills = () => {
   return (
     <section id='skills'>
       <Typography variant='h3' className='bolder-text section-title skills-title'>Skills</Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={1}>
         {
           skills.map((skill, index) => <Grid key={index} item xs={4} md={3} lg={2}>
             <div className="skill-box" title={skill.title}>

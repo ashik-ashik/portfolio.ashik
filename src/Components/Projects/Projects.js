@@ -9,11 +9,17 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
 import "swiper/css/bundle";
-import ProjectSlider from './ProjectSlider';
 
 
 const Projects = () => {
   const projects = [
+    {
+      name:'ABC University', 
+      tags:['User Manage','Creative','Agency'], 
+      techs:['ReactJS','NodeJS','MongoDB', 'ReactBootstrap',"Google Firebase", 'jodIt', 'EmailJs'],
+      img:'https://i.postimg.cc/tTxTYkgH/user-Management.png', 
+      liveLinks:['https://social-work-at-pust.web.app/','https://github.com/ashik-ashik/pust-sw-client','https://github.com/ashik-ashik/pust-sw-server']
+    },
     {
       name:'Wonder By-Cycle Shop', 
       tags:['Ecommerce','Shop','Agency'], 
@@ -51,12 +57,12 @@ const Projects = () => {
  
       <Box>
       <Swiper 
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[ Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={15}
-          slidesPerView={3}
+          slidesPerView={1}
           navigation
           breakpoints={{
-            640: {
+            500: {
               slidesPerView: 1,
               spaceBetween: 0,
             },
@@ -69,6 +75,7 @@ const Projects = () => {
               spaceBetween: 15,
             },
           }}
+          // loop={true}
           pagination={{type: "progressbar", clickable: true }}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
