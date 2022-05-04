@@ -5,6 +5,7 @@ import About from './Components/About/About';
 import HeroBanner from './Components/Home/HeroBanner/HeroBanner';
 import Home from './Components/Home/Home';
 import Skills from './Components/Skills/Skills';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
           <Route path='/' element={<Home/>} />
         </Routes>
       </Router>
-
+      
     </>
   );
 }

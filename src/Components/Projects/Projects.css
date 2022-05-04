@@ -10,10 +10,8 @@
   height: 350px;
   background-position: top center;
   transition: all .7s;
-
-}
-.project-container.project-1{
-  background: url(https://i.postimg.cc/D0CmSj6F/world-leading-uv-home.png);
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
 
 .project-box{
@@ -30,8 +28,9 @@
 .project-link-box{
   position: relative;
   width: 80%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
   padding: 15px;
   background: var(--lighting-bg);
   z-index: 1;
@@ -44,11 +43,11 @@
   height: 0%;
   position: absolute;
   border: 3px solid #000;
-  transition: all .4s;
+  transition: all .5s;
+  transition-delay: .2s;
   z-index: -1;
 }
 .project-link-box::before{
-  
   border-right-width: 0px;
   border-top-width: 0px;
   bottom: 0%;
@@ -60,10 +59,13 @@
   top: 0%;
   right: 0%;
 }
-.project-box:hover .project-link-box::after,
-.project-box:hover .project-link-box::before{
+.project-container:hover .project-box .project-link-box::after,
+.project-container:hover .project-box .project-link-box::before{
   width: 105%;
   height: 120%;
+}
+.project-links-btn{
+  display: block !important;
 }
 
 /* project short description */
@@ -80,11 +82,27 @@
 .portfolio-tag{
   display: inline-block;
   margin-bottom: 5px !important;
+  font-size: 10px !important;
+  margin-right: 3px !important;
 }
 
 .project-container:hover{
-  background-position: bottom center;
+  background-position: bottom center !important;
 }
 .project-container:hover .project-box{
   transform: scale(1) !important;
+}
+
+/* swiper slider */
+.swiper-wrapper{
+  max-width: 1000px !important;
+  display: flex;
+  align-items: stretch !important;
+  margin-top: 7px;
+}
+.swiper-pagination-progressbar-fill{
+  background: var(--sidebar-bg) !important;
+}
+.swiper-pagination-progressbar{
+  z-index: 5;
 }

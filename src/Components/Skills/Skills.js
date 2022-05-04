@@ -21,7 +21,7 @@ const Skills = () => {
     {skillIcon:'https://i.postimg.cc/5tfFwPv3/sass.png', title:'SASS'},
     {skillIcon:'https://i.postimg.cc/MZYRGJQG/jquery.png', title:'jQuery'},
     {skillIcon:'https://i.postimg.cc/wxwZV62n/figma1.png', title:'Figma'},
-    {skillIcon:'https://i.postimg.cc/YCTwxprt/ps.png', title:'Photoshop'},
+    {skillIcon:'https://i.postimg.cc/YCTwxprt/ps.png', title:'Photoshop'}
     ]
   return (
     <section id='skills'>
@@ -30,7 +30,14 @@ const Skills = () => {
         {
           skills.map((skill, index) => <Grid key={index} item xs={4} md={3} lg={2}>
             <div className="skill-box" title={skill.title}>
-              <img src={skill.skillIcon} alt="" />
+              <div className="inner-skill-box">
+                <div className="skill-box-front">
+                  <img src={skill.skillIcon} className='skill-image' alt="" />
+                </div>
+                <div className="skill-box-back">
+                  <Typography variant='h6' className='bolder-text'>{skill.title}</Typography>
+                </div>
+              </div>
             </div>
           </Grid>
           )

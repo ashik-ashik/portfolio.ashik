@@ -3,32 +3,65 @@
   padding: 50px 20px;
   margin-top: 50px;
 }
-.skill-box{
-  border: 1px solid var(--sidebar-color);
-  box-shadow: #63636333 0px 2px 8px 0px;
-  background: #fff;
-  border-radius: 1px;
-  padding: 25px;
-  transition: all .2s ease;
-}
-.skill-box:hover{
-  box-shadow: #6363631f 2px 5px 12px 10px;
-  transform: translateY(-3px);
-  cursor: alias;
-}
 
-.skill-box > img {
+
+.skill-box .skill-image {
   height: 120px;
   display: block;
   margin: 0 auto;
 }
 
+/* skill box skill 
+*/
+.skill-box {
+  background-color: transparent;
+  perspective: 1000px;
+  width: 100%;
+  height: 200px;
+}
+
+.inner-skill-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.8s cubic-bezier(0.8, -0.4, 0.2, 1.7);
+  transform-style: preserve-3d;
+}
+
+.skill-box:hover .inner-skill-box {
+  transform: rotateY(180deg);
+}
+
+.skill-box-front, .skill-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-box-front {
+  background-color: var(--lighting-bg);
+}
+
+.skill-box-back {
+  background-color: var(--sidebar-bg);
+  transform: rotateY(180deg);
+}
+.skill-box-back > * {
+  color: var(--secondary-color);
+}
 /* responsive skill box */
 @media screen and (max-width:667px) {
   .skill-box{
   padding: 15px;
   }
-  .skill-box > img {
+  .skill-box .skill-image {
     height: 90px;
   }
 }
