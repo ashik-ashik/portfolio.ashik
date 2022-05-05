@@ -86,7 +86,7 @@ const Projects = () => {
               <div className="project-box">
                 <div className="project-link-box">
                   {
-                    project?.liveLinks?.map((link, index)=><Button key={index} href={link}  target='_blank' className='portfolio-button' variant="contained"><small>
+                    project?.liveLinks?.map((link, index)=><Button key={index} href={link} rel="noopener noreferrer" target='_blank' className='portfolio-button' variant="contained"><small>
                       {['Visit Site', 'Client Code', 'Server Code'][index]}
                     </small></Button> )
                   }

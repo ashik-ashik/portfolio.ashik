@@ -41,6 +41,7 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -64,4 +65,17 @@
   .skill-box .skill-image {
     height: 90px;
   }
+}
+
+
+/* skill bar */
+.skillbar .skillbar-title,
+.skillbar{
+  background: var(--lighting-bg) !important;
+}
+.skillbar .skillbar-title > * {
+  color: var(--secondary-color);
+}
+.skillbar-bar {
+  background: var(--text-hilight) !important;
 }

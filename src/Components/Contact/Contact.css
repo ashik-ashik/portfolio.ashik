@@ -24,9 +24,9 @@
   outline: none;
   border-bottom: 2px solid var(--sidebar-bg);
 }
-#contact-form .MuiFormControl-root{
+/* #contact-form .MuiFormControl-root{
   background: var(--lighting-bg);
-}
+} */
 #contact-form .MuiInput-input,
 #contact-form .MuiInputLabel-formControl{
   padding: 0 8px;
@@ -41,4 +41,52 @@
 }
 #contact-form .css-1a1fmpi-MuiInputBase-root-MuiInput-root:after{
   border-color: var(--sidebar-bg) !important;
+}
+
+/* confirm popup */
+#get-in-touch .MuiSnackbar-root .MuiPaper-root{
+  background: var(--sidebar-bg);
+  color: var(--secondary-color) !important;
+}
+#get-in-touch .MuiSnackbar-root .MuiPaper-root > *{
+  color: var(--secondary-color) !important;
+}
+
+/* contact info design */
+#get-in-touch .contact-info-box{
+  background: var(--lighting-bg);
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  transition: all .3s;
+}
+#get-in-touch .contact-info-box .icon-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: var(--lighting-bg);
+  transition: all .3s;
+  margin-right: 15px;
+ }
+#get-in-touch .contact-info-box .detail-box {
+  flex-grow: 1;
+  /* text-align: center; */
+}
+#get-in-touch .box-title{
+  color: var(--primary-color);
+}
+#get-in-touch .contact-info-box:hover{
+  background: var(--sidebar-bg);
+}
+#get-in-touch .contact-info-box:hover .icon-box {
+  border-color: var(--secondary-color);
+}
+#get-in-touch .contact-info-box:hover .icon-box > * ,
+#get-in-touch .contact-info-box:hover .box-title ~ *,
+#get-in-touch .contact-info-box:hover .box-title {
+  color: var(--secondary-color);
 }

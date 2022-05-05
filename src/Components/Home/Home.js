@@ -37,6 +37,7 @@ import Skills from '../Skills/Skills';
 import Services from '../Services/Services';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact/Contact';
+import BeFriend from '../BeFriend/BeFriend';
 
 const drawerWidth = 240;
 const openedMixin = (theme) => ({
@@ -222,6 +223,7 @@ const Home = () => {
           <Services />
           <Projects />
           <Contact />
+          <BeFriend/>
           
         </Box>
       </Box>

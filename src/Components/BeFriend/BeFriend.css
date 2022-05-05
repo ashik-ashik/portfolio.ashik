@@ -1,0 +1,52 @@
+#be-friend{
+  padding: 50px 15px;
+  background: var(--lighting-bg);
+}
+#be-friend .social-media-box{
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  transition: all .3s;
+  background: var(--primary-bg);
+}
+
+#be-friend .social-media-box .icon-box{
+  margin-right: 15px;
+  flex-basis: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--lighting-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sidebar-bg);
+  transition: all .3s;
+}
+#be-friend .social-media-box .icon-box > *,
+#be-friend .social-media-box .icon-box > * > *{
+  color: var(--secondary-color);
+}
+#be-friend .social-media-box .detail-box .follow-me{
+  font-size: 11px;
+  color: var(--primary-color);
+}
+#be-friend .social-media-box .detail-box > *,
+#be-friend .social-media-box .detail-box > * > *{
+  color: var(--primary-color) ;
+}
+#be-friend .social-media-box:hover{
+  box-shadow: #00000029 0px 10px 36px 0px, #0000000f 0px 0px 0px 1px;
+  background: var(--sidebar-bg);
+}
+#be-friend .social-media-box:hover .icon-box{
+  background: var(--lighting-bg);
+}
+
+#be-friend .social-media-box:hover .detail-box > *,
+#be-friend .social-media-box:hover .detail-box > * > *{
+  color: var(--secondary-color);
+}
+#be-friend a{
+  text-decoration: none;
+}
