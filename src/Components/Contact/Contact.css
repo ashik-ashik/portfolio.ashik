@@ -1,3 +1,44 @@
 #get-in-touch{
   padding: 50px 0;
 }
+#contact-form .MuiSvgIcon-root{
+  color: var(--secondary-color) ;
+}
+#contact-form textarea{
+  width: 100%;
+  height: 150px;
+  border: none;
+  border-bottom: 1px solid var(--lighting-bg);
+  transition: all .3s;
+  background: var(--lighting-bg);
+  padding: 10px;
+  color: var(--primary-color);
+  font-size: 16px;
+  margin-top: 15px;
+}
+#contact-form textarea::placeholder{
+  color: var(--primary-color);
+}
+#contact-form textarea:focus{
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--sidebar-bg);
+}
+#contact-form .MuiFormControl-root{
+  background: var(--lighting-bg);
+}
+#contact-form .MuiInput-input,
+#contact-form .MuiInputLabel-formControl{
+  padding: 0 8px;
+  color: var(--primary-color) !important;
+}
+#contact-form .MuiInputLabel-formControl{
+  margin-bottom: 7px !important;
+}
+
+#contact-form .css-1a1fmpi-MuiInputBase-root-MuiInput-root:before{
+  border-color: var(--lighting-bg) !important;
+}
+#contact-form .css-1a1fmpi-MuiInputBase-root-MuiInput-root:after{
+  border-color: var(--sidebar-bg) !important;
+}
