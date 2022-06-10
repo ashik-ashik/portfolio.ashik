@@ -52,7 +52,7 @@ const Contact = () => {
     <section id='get-in-touch'>
       <Typography variant='h3' className='section-title'>Get In Touch </Typography>
         <Grid mt={3} container spacing={3}>
-          <Grid item xs={12} md={6} >
+          <Grid item xs={12} md={5} >
           {
             contactInfo.map(item => <div key={item.name} style={{width:'100%'}}>
               <Paper square sx={{marginTop:'20px'}} className="contact-info-box">
@@ -65,7 +65,7 @@ const Contact = () => {
             </div>)
           }
           </Grid>
-          <Grid item xs={12} md={6} >
+          <Grid item xs={12} md={7} >
             <Box component='form' autoComplete="off" id="contact-form" onSubmit={handleSubmit(sendEmail)}>
               <TextField {...register('name')} size="small" required fullWidth label="Your Name:" variant="standard" />
               <TextField {...register('email')} size="small" required fullWidth label="Your Email:" type='email' margin="normal" variant="standard" />

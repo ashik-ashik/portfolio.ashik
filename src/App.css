@@ -115,6 +115,9 @@ body::-webkit-scrollbar-thumb{
 div, p, h1,h2,h3,h4,h5,h6,span,small,strong,section,article,sup,sub{
   color: var(--primary-color);
 }
+.MuiTypography-body1{
+  color: var(--secondary-color) !important;
+}
 
 .highlighted-title{
   color: var(--text-hilight) !important;

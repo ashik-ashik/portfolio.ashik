@@ -59,6 +59,8 @@
   display: flex;
   align-items: center;
   transition: all .3s;
+  position: relative;
+  z-index: 1;
 }
 #get-in-touch .contact-info-box .icon-box {
   width: 60px;
@@ -76,11 +78,33 @@
   flex-grow: 1;
   /* text-align: center; */
 }
+#get-in-touch .contact-info-box .detail-box > * {
+  color: var(--primary-color) !important;
+  transition: all 700ms;
+}
+#get-in-touch .contact-info-box:hover .detail-box > * {
+  color: var(--matching-color) !important;
+}
 #get-in-touch .box-title{
   color: var(--primary-color);
 }
-#get-in-touch .contact-info-box:hover{
+#get-in-touch .contact-info-box::after{
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  left: 0;
+  /* top: 0; */
   background: var(--sidebar-bg);
+  transform-origin: right;
+  transition: all 600ms;
+  z-index: -1;
+}
+#get-in-touch .contact-info-box:hover::after{
+  width: 100%;
+  right: 0;
+  /* bottom: 0; */
+  transform-origin: left;
 }
 #get-in-touch .contact-info-box:hover .icon-box {
   border-color: var(--secondary-color);

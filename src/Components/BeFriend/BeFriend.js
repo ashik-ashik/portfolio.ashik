@@ -14,9 +14,9 @@ const BeFriend = () => {
       {name:'LinkedIn', profileUrl:'https://linkedin.com/in/md-ashik-ali', icon:<LinkedInIcon/>},
       {name:'Twitter', profileUrl:'https://twitter.com/md_ashik_ali', icon:<TwitterIcon/>},
       {name:'GitHub', profileUrl:'https://github.com/ashik-ashik', icon:<GitHubIcon/>},
-      {name:'StackOverflow', profileUrl:'https://facebook.com/ashik.ali0', icon:<i className='bx bxl-stack-overflow' ></i>},
-      {name:'Dribble', profileUrl:'https://facebook.com/ashik.ali0', icon:<i className='bx bxl-dribbble'></i>},
-      {name:'Vimeo', profileUrl:'https://facebook.com/ashik.ali0', icon:<i className='bx bxl-vimeo' ></i>},
+      {name:'StackOverflow', profileUrl:'https://stackoverflow.com/users/15259156/ashik-ali', icon:<i className='bx bxl-stack-overflow' ></i>},
+      {name:'Dribble', profileUrl:'https://dribbble.com/mdashika989', icon:<i className='bx bxl-dribbble'></i>},
+      {name:'CodePen', profileUrl:'https://codepen.io/ali-ashik', icon:<i className='bx bxl-codepen' ></i>},
       {name:'Instagram', profileUrl:'https://instagram.com/md_ashik_ali_khan', icon:<InstagramIcon/>},
     ];
   return (
