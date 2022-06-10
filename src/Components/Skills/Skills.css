@@ -59,9 +59,7 @@
 }
 /* responsive skill box */
 @media screen and (max-width:667px) {
-  .skill-box{
-  padding: 15px;
-  }
+  
   .skill-box .skill-image {
     height: 90px;
   }

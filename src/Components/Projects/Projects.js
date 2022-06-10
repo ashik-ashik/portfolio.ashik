@@ -46,7 +46,7 @@ const Projects = () => {
       tags:['Creative','Education','Agency'], 
       techs:['ReactJS','ReactBootstrap','CSS'], 
       img:'https://i.postimg.cc/D0CmSj6F/world-leading-uv-home.png', 
-      liveLinks:['','']
+      liveLinks:['https://world-leading-university.netlify.app/','https://github.com/ashik-ashik/world-leading-university']
     },
   ]
   return (
