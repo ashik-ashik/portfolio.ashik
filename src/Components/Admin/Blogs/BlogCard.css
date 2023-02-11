@@ -2,4 +2,9 @@
 .blog-card 
 .blog-content{
   background: var(--lighting-bg);
+  color: var(--matching-color);
+}
+.blog-card 
+.blog-content *{
+  color: var(--matching-color);
 }

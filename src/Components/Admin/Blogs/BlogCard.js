@@ -43,7 +43,7 @@ const BlogCard = ({blog}) => {
       {
         open && <DeletePopup open={open} setOpen={setOpen} setAgreement={setAgreement} id={blog?._id} />
       }
-      <Grid item xs={6} md={3} className="blog-card-item">
+      <Grid item xs={12} md={4} lg={3} className="blog-card-item">
       <Card className='blog-card'>
         <CardMedia
           component="img"

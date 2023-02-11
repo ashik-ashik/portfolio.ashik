@@ -46,7 +46,7 @@ const EditBlog = () => {
           content: blogContent,
         }).then(res => {
           if(res.status === 200) {
-            toast("success", "Success", "Your Blog is Live Now!");
+            toast("success", "Success", "Your Blog have been updated!");
             navigate("/panel/blogs");
           }
         }).catch(err=> {
@@ -74,7 +74,7 @@ const EditBlog = () => {
       </form>
       <ReactQuill modules={modules} theme="snow" value={blogContent} onChange={setContent} />
       <Box sx={{mt:'20px'}}>
-        <Button variant="contained" onClick={handleUpdateBlog} >Publish Blog</Button>
+        <Button variant="contained" onClick={handleUpdateBlog} >Update Blog</Button>
       </Box>
     </div>
   );

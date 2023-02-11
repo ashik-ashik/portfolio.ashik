@@ -36,7 +36,7 @@ const  DeletePopup= ({open, setOpen, setAgreement, id}) => {
         
       >
         <DialogTitle style={{textAlign:"center"}}>{"Delete Blog?"}</DialogTitle>
-        <DialogContent style={{minWidth:"500px", width:"90%", display:"flex", justifyContent:"center"}}>
+        <DialogContent style={{minWidth:"400px", width:"90%", display:"flex", justifyContent:"center"}}>
           <DialogContentText id="alert-dialog-slide-description">
             <DeleteForeverIcon color="error" style={{fontSize:"5em"}} /> <br />
             <Typography variant='body' sx={{fontWeight:"bold"}}>Are you sure?</Typography>
