@@ -1,0 +1,4 @@
+// "react-slick-slider": "^0.15.10",
+    "react-swipeable-views": "^0.14.0",
+
+//https://personal-server-22.vercel.app//

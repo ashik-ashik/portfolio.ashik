@@ -1,0 +1,16 @@
+.blog-card{
+  background: var(--sidebar-bg) !important;
+  color: var(--matching-color) !important;
+  
+}
+.blog-card .blog-content,
+.blog-card .blog-header-text * {
+  color: var(--matching-color) !important;
+
+}
+.blog-body *{
+  color: var(--matching-color) !important;
+}
+.css-83ijpv-MuiTypography-root{
+  font-size: 10px !important;
+}

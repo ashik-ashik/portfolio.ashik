@@ -71,25 +71,27 @@ const Skills = () => {
         </Grid>
       </Grid>
       <Divider/>
-      <Typography variant='overline' mt={1} mb={2} sx={{color:'var(--text-hilight)'}} className='bolder-text'>Technology / Tools where I am proficient:</Typography>
-      <Grid container spacing={1}>
-        {
-          tools.map((skill, index) => <Grid key={index} item xs={4} md={3} lg={2}>
-            <div className="skill-box" title={skill.title}>
-              <div className="inner-skill-box">
-                <div className="skill-box-front">
-                  <img src={skill.skillIcon} className='skill-image' alt="" />
-                </div>
-                <div className="skill-box-back">
-                  <Typography variant='overline' mb={0} sx={{color:'var(--secondary-color)'}} className='bolder-text'>expertise level</Typography>
-                  <Typography variant='h6' className='bolder-text'>{skill.type}</Typography>
+      <div className="technologies">
+        <Typography variant='overline' mt={1} mb={2} sx={{color:'var(--text-hilight)'}} className='bolder-text'>Technology / Tools where I am proficient:</Typography>
+        <Grid container spacing={1} className="">
+          {
+            tools.map((skill, index) => <Grid key={index} item xs={4} md={3} lg={2}>
+              <div className="skill-box" title={skill.title}>
+                <div className="inner-skill-box">
+                  <div className="skill-box-front">
+                    <img src={skill.skillIcon} className='skill-image' alt="" />
+                  </div>
+                  <div className="skill-box-back">
+                    <Typography variant='overline' mb={0} sx={{color:'var(--secondary-color)'}} className='bolder-text'>expertise level</Typography>
+                    <Typography variant='h6' className='bolder-text'>{skill.type}</Typography>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Grid>
-          )
-        }
-      </Grid>
+            </Grid>
+            )
+          }
+        </Grid>
+      </div>
     </section>
   );
 };

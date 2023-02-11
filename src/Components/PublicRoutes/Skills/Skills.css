@@ -63,6 +63,9 @@
   .skill-box .skill-image {
     height: 90px;
   }
+  .technologies{
+    display: none;
+  }
 }
 
 

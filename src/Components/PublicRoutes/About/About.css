@@ -1,3 +1,6 @@
+#about{
+  padding-top: 30px;
+}
 .about-thumb{
   animation: about-thumb 2s infinite ease running alternate;
 }
@@ -9,4 +12,8 @@
     transform: translate(7px, 7px);
 
   }
+}
+.about-me-text{
+  color: var(--primary-color) !important;
+  text-align: justify;
 }

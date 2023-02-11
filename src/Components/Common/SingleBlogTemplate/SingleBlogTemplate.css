@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+
+#single-blog-template  .blog-content-items * {
+  margin: 7px 0;
+}
+#single-blog-template  .blog-content-items pre.ql-syntax{
+  background: #363636 !important;
+  color: #00e57e !important;
+  font-size: 13px;
+  font-family: 'Nova Mono', monospace;
+  padding: 10px;
+  margin-top: 0;
+}

@@ -116,7 +116,7 @@ div, p, h1,h2,h3,h4,h5,h6,span,small,strong,section,article,sup,sub{
   color: var(--primary-color);
 }
 .MuiTypography-body1{
-  color: var(--secondary-color) !important;
+  color: var(--secondary-color);
 }
 
 .highlighted-title{
@@ -164,6 +164,9 @@ div, p, h1,h2,h3,h4,h5,h6,span,small,strong,section,article,sup,sub{
 }
 .section-title.projects-title::before{
   content: 'Projects';
+}
+.section-title.blogs-title::before{
+  content: 'Blogs';
 }
 .section-title::after{
   content: '';
@@ -222,5 +225,9 @@ transition: background .5s;
 img{
   max-width: 100%;
 }
+
+/* #application{
+  background: var(--primary-bg);
+} */
 
 

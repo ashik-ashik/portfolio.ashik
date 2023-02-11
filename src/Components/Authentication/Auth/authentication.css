@@ -1,0 +1,19 @@
+.authentication-container {
+  background: var(--sidebar-bg);
+}
+.authentication-container *{
+  color: var(--primary-color);
+}
+.authentication-tabs{
+  background: var(--lighting-bg);
+  color: var(--matching-color);
+}
+
+.auth-paper{
+  background: var(--lighting-bg) !important;
+}
+.auth-paper *,
+.login *,
+.signup *{
+  color: var(--matching-color) !important;  
+}

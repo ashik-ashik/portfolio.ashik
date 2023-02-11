@@ -1,0 +1,14 @@
+
+#home-blogs .blog-card{
+  background: var(--sidebar-bg);
+  color: var(--matching-color) !important;
+  
+}
+#home-blogs .blog-card .blog-content,
+#home-blogs .blog-card .blog-header-text * {
+  color: var(--matching-color) !important;
+
+}
+.blog-body *{
+  color: var(--matching-color) !important;
+}
