@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Projects.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -9,46 +9,19 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
 import "swiper/css/bundle";
+import axios from 'axios';
 
 
 const Projects = () => {
-  const projects = [
-    {
-      name:'ABC University', 
-      tags:['User Manage','Creative','Agency'], 
-      techs:['ReactJS','NodeJS','MongoDB', 'ReactBootstrap',"Google Firebase", 'jodIt', 'EmailJs'],
-      img:'https://i.postimg.cc/tTxTYkgH/user-Management.png', 
-      liveLinks:['https://social-work-at-pust.web.app/','https://github.com/ashik-ashik/pust-sw-client','https://github.com/ashik-ashik/pust-sw-server']
-    },
-    {
-      name:'Wonder By-Cycle Shop', 
-      tags:['Ecommerce','Shop','Agency'], 
-      techs:['ReactJS','NodeJS','MongoDB', 'Material UI',"Google Firebase"],
-      img:'https://i.postimg.cc/VLL8bwWg/by-cycke.png', 
-      liveLinks:['https://bi-bike-online-store.web.app/','https://github.com/ashik-ashik/by-cycle','https://github.com/ashik-ashik/by-cycle-server']
-    },
-    {
-      name:'Cool Shop', 
-      tags:['E-Commerce','Shop','E-Market'], 
-      techs:['HTML5','CSS3', 'Vanila JS', 'jQuery', 'AOS Animation'],
-      img:'https://i.postimg.cc/TYrgwp6y/cool-shop.png', 
-      liveLinks:['https://ashik-ashik.github.io/cool-shop/', 'https://github.com/ashik-ashik/cool-shop']
-    },
-    {
-      name:'Learn Online', 
-      tags:['E-Learning','Creative','Landing Page', 'Agency'], 
-      techs:['HTML5','SASS','CSS3', 'Vanila JS'],
-      img:'https://i.postimg.cc/yNw8cyh7/e-learning-min.png', 
-      liveLinks:['https://ashik-ashik.github.io/online-education/', 'https://github.com/ashik-ashik/online-education']
-    },
-    {
-      name:'World Leading University', 
-      tags:['Creative','Education','Agency'], 
-      techs:['ReactJS','ReactBootstrap','CSS'], 
-      img:'https://i.postimg.cc/D0CmSj6F/world-leading-uv-home.png', 
-      liveLinks:['https://world-leading-university.netlify.app/','https://github.com/ashik-ashik/world-leading-university']
-    },
-  ]
+  const [projects, setProjects] = useState();
+  useEffect(()=>{
+    axios.get("http://localhost:5500/projects")
+    .then(res => setProjects(res.data))
+    .catch(err => {
+      
+    })
+
+  },[])
   return (
     <section id='projects'>
       <Typography variant="h3" className='section-title projects-title'>Projects</Typography>
@@ -97,13 +70,13 @@ const Projects = () => {
             <div className="project-short">
               <Typography variant='subtitle2' mb={1} className='bolder-text'>{project?.name}</Typography>
               {
-                project?.tags?.map((tag, index) => <Button key={index} variant="contained" disabled className='portfolio-tag' >
+                project?.tags?.split(",")?.map((tag, index) => <Button key={index} variant="contained" disabled className='portfolio-tag' >
                   {tag}
                 </Button>)
               }
               <Typography variant='h6' mt={1} mb={1} className='bolder-text'>Technologies:</Typography>
               {
-                project?.techs?.map((tech, index) => <Button key={index} variant="outlined" disabled className='portfolio-tag'>
+                project?.techs?.split(",")?.map((tech, index) => <Button key={index} variant="outlined" disabled className='portfolio-tag'>
                   {tech}
                 </Button>)
               }

@@ -20,6 +20,7 @@ import AdminRoute from './Components/Authentication/AdminRoute/AdminRoute';
 import SingleBlogTemplate from './Components/Common/SingleBlogTemplate/SingleBlogTemplate';
 import AllBlogs from './Components/PublicRoutes/AllBlogs/AllBlogs';
 import ManageProjects from './Components/Admin/Projects/ManageProjects';
+import AddProject from './Components/Admin/Projects/AddProject/AddProject';
 // import 'animate.css/animate.compat.css';
 
   firebaseInit();
@@ -57,6 +58,7 @@ import ManageProjects from './Components/Admin/Projects/ManageProjects';
             <Route path="add-new-blog" element={<AddBlog />} />
             <Route path="edit-blog/:id" element={<EditBlog />} />
             <Route path="projects" element={<ManageProjects />} />
+            <Route path="add-new-projects" element={<AddProject />} />
           </Route>
         </Routes>
       </Router>

@@ -1,10 +1,13 @@
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, TextField, Typography } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactQuill from 'react-quill';
 import { useNavigate, useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import { error } from '../../../../app/actionCreators/actionCreators';
 import toast from '../../../../app/toast/toast';
+import { useData } from '../../../../context/ContextProvider';
 import Loader from '../../../Common/Loader/Loader';
 
 const EditBlog = () => {
@@ -21,6 +24,7 @@ const EditBlog = () => {
     ],
   };
   
+  const {state, dispatch} = useData();
   const {id} = useParams();
   const navigate = useNavigate();
   const [blogData, setData] = useState(null);
@@ -32,11 +36,14 @@ const EditBlog = () => {
         setData(res.data)
       }
     }).catch(err=>{
-      setData({})
-      toast("danger", "Error", err.message)
+      setData({});
+      setContent(null);
+      console.log(err)
+      dispatch(error({code:err.response.status, message:err.message}))
+      toast("danger", "Error", err.message);
     })
 
-  },[id])
+  },[id, dispatch])
     
   const title = watch('title');
 
@@ -67,14 +74,26 @@ const EditBlog = () => {
   return (
     <div>
       <h3 className="text-2xl">Edit Blog--{id}</h3>
-      <form onSubmit={handleSubmit(handleUpdateBlog)}>
-        <Box sx={{mb:"15px"}}>
-            <TextField sx={{width:"100%"}} {...register("title", {required:true})} label="Blog Title" variant="standard" />
+      {
+        state.isError && <Box sx={{textAlign:"center"}}>
+          <Typography variant='h3' sx={{fontWeight:"bold"}}>{state.error.code}</Typography>
+          <Typography variant='body2' sx={{mt:"15px"}}>Te content is not available right now!</Typography>
         </Box>
-      </form>
-      <ReactQuill modules={modules} theme="snow" value={blogContent} onChange={setContent} />
-      <Box sx={{mt:'20px'}}>
-        <Button variant="contained" onClick={handleUpdateBlog} >Update Blog</Button>
+      }
+      {!state.isError && <>
+        <form onSubmit={handleSubmit(handleUpdateBlog)}>
+          <Box sx={{mb:"15px"}}>
+              <TextField sx={{width:"100%"}} style={{color:"var(--matching-color)"}} {...register("title", {required:true})} label="Blog Title" variant="standard" />
+          </Box>
+        </form>
+        <ReactQuill modules={modules} theme="snow" value={blogContent} onChange={setContent} />
+      </>
+      }
+      <Box sx={{m:'20px', display:"flex", justifyContent:"space-between"}}>
+        {!state.isError && <Button variant="contained" onClick={handleUpdateBlog} >Update Blog</Button>}
+        <Link to="/panel/blogs" style={{textDecoration:"none"}}>
+          <Button variant='contained'>{state.isError ? "Back" : "Cancel"}</Button>
+        </Link>
       </Box>
     </div>
   );
