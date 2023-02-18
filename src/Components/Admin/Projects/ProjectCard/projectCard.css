@@ -1,0 +1,11 @@
+
+.project-card{
+  background: var(--lighting-bg) !important;
+  transition: transform 300ms !important;
+}
+.project-card:hover{
+  transform: translateY(-10px);
+}
+.project-card .action-btn {
+  color: var(--primary-color) !important;
+}

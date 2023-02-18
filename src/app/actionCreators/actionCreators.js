@@ -1,5 +1,4 @@
-import axios from "axios";
-import { DELETEBLOG, ERROR, LOADBLOGS, LOADING, LOGIN, REGISTER, RESETLOADING, RESETUSER, SETUSER } from "../actionTypes/actionTypes"
+import { DELETEBLOG, DELETEPROJECT, ERROR, LOADBLOGS, LOADING, LOADPROJECTS, LOGIN, POSTPROJECT, REGISTER, RESETLOADING, RESETUSER, SETUSER } from "../actionTypes/actionTypes"
 
 export const loading = () => {
   return {
@@ -49,6 +48,24 @@ export const loadBlogs = (blogs) => {
 export const deleteBlog = (id) => {
   return {
     type: DELETEBLOG,
+    payload: id,
+  };
+};
+export const loadProjects = (projects) => {
+  return {
+    type: LOADPROJECTS,
+    payload: projects,
+  };
+};
+export const addProject = (project) => {
+  return {
+    type: POSTPROJECT,
+    payload: project,
+  };
+};
+export const deleteProject = (id) => {
+  return {
+    type: DELETEPROJECT,
     payload: id,
   };
 };

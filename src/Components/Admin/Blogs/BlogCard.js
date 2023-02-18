@@ -30,7 +30,7 @@ const BlogCard = ({blog}) => {
     .then(res => {
       if(res.status === 200){
         setAgreement({id: null, agree: false});
-        toast("warning", "Delete Blog", "Blog has been deleted")
+        toast("warning", "Delete Blog", "Blog has been deleted!")
         dispatch(deleteBlog(agreement.id));
       }
     })
@@ -41,7 +41,7 @@ const BlogCard = ({blog}) => {
   return (
     <>
       {
-        open && <DeletePopup open={open} setOpen={setOpen} setAgreement={setAgreement} id={blog?._id} />
+        open && <DeletePopup open={open} setOpen={setOpen} setAgreement={setAgreement} id={blog?._id} title={"Blog"} />
       }
       <Grid item xs={12} md={4} lg={3} className="blog-card-item">
       <Card className='blog-card'>
@@ -58,13 +58,11 @@ const BlogCard = ({blog}) => {
           <Typography gutterBottom variant="h6" component="h6" sx={{fontSize:"12px"}}>
             {blog?.publishDate}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
           <div
             dangerouslySetInnerHTML={{
               __html: blog?.content?.substr(0, 80)
             }}
           />
-          </Typography>
         </CardContent>
         <Divider />
         <CardActions  className='blog-content'>

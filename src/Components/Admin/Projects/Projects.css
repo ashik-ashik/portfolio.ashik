@@ -1,0 +1,15 @@
+
+.project-form .text-field *{
+  color: var(--primary-color) !important;
+}
+
+.project-form .text-field {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.project-form .form-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}

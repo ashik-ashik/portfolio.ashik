@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from '@mui/material';
+import { Box, Button, Divider, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import './Projects.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css';
 import "swiper/css/bundle";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const Projects = () => {
@@ -21,7 +22,15 @@ const Projects = () => {
       
     })
 
-  },[])
+  },[]);
+
+  const btnStyle = {
+    display: "flex",
+    justifyContent:"center",
+    alignItems:"center",
+    margin: "30px 0",
+    
+  }
   return (
     <section id='projects'>
       <Typography variant="h3" className='section-title projects-title'>Projects</Typography>
@@ -80,6 +89,12 @@ const Projects = () => {
                   {tech}
                 </Button>)
               }
+              <Divider style={{margin:"10px 0", background:"var(--primary-color)"}}/>
+              <Box>
+                <Link to={`/view_project/${project._id}`} style={{textDecoration:"none", fontSize:"13px", fontWeight:"bold"}}>
+                  <Button variant='contained' sx={{width:"100%"}}>View Detail</Button>
+                </Link>
+              </Box>
               
             </div>
             </SwiperSlide>
@@ -87,6 +102,11 @@ const Projects = () => {
           }
           
         </Swiper>
+      </Box>
+      <Box style={btnStyle}>
+        <Link to="/all-projects" style={{textDecoration:"none"}}>
+          <Button variant="contained" color="secondary">All Projects</Button>
+        </Link>
       </Box>
     </section>
   );

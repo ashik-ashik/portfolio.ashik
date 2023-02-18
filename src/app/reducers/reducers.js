@@ -1,4 +1,4 @@
-import { DELETEBLOG, ERROR, LOADBLOGS, LOADING, LOGIN, REGISTER, RESETLOADING, RESETUSER, SETUSER } from "../actionTypes/actionTypes";
+import { DELETEBLOG, DELETEPROJECT, ERROR, LOADBLOGS, LOADING, LOADPROJECTS, LOGIN, POSTPROJECT, REGISTER, RESETLOADING, RESETUSER, SETUSER } from "../actionTypes/actionTypes";
 
 export const initialState = {
   email:"",
@@ -7,18 +7,17 @@ export const initialState = {
   isError: false,
   error:{},
   blogs: [],
+  projects:[]
 };
 
 const reducers = (state, action) => {
-  console.log(action)
+  // console.log(action)
   switch(action?.type) {
     
       case LOADING :
         return {
           ...state,
           isLoading: true,
-          isError: false,
-          error:""
         };
       case RESETLOADING :
         return {
@@ -53,9 +52,8 @@ const reducers = (state, action) => {
         return {
           ...state,
           isLoading: false,
-          isError: false,
-          error: "",
-          email: action?.payload
+          email: action?.payload.email,
+          role: action.payload.role
         }
       case RESETUSER:
         return {
@@ -70,12 +68,33 @@ const reducers = (state, action) => {
         blogs:[...action.payload]
       }
       case DELETEBLOG: 
-      return{
-        ...state,
-        isLoading: false,
-        isError: false,
-        blogs:[...state.blogs.filter(blog => blog._id !== action.payload)]
-      }
+        return{
+          ...state,
+          isLoading: false,
+          isError: false,
+          blogs:[...state.blogs.filter(blog => blog._id !== action.payload)]
+        }
+      case LOADPROJECTS:
+        return {
+          ...state,
+          isLoading: false,
+          isError: false,
+          error: {},
+          projects: action.payload
+        }
+      case POSTPROJECT:
+        return {
+          ...state,
+          isLoading: false,
+          isError: false,
+          error:{},
+          projects: [...state.projects, action.payload]
+        }
+      case DELETEPROJECT :
+        return {
+          ...state,
+          projects: [...state.projects.filter(project => project._id !== action.payload)]
+        }
 
     default :
     return;

@@ -1,0 +1,11 @@
+
+.public-project-card {
+  background: var(--sidebar-bg) !important;
+  transition: transform 300ms !important;
+}
+.public-project-card *{
+  color: var(--matching-color) ;
+}
+.public-project-card:hover{
+  transform: translateY(-10px);
+}

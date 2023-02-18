@@ -1,7 +1,11 @@
 .blog-card{
   background: var(--sidebar-bg) !important;
   color: var(--matching-color) !important;
+  transition: transform 300ms !important;
   
+}
+.blog-card:hover{
+  transform: translateY(-10px);
 }
 .blog-card .blog-content,
 .blog-card .blog-header-text * {

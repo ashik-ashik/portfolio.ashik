@@ -1,0 +1,35 @@
+.all-projects-banner{
+  height: 90vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: var(--text-hilight) url(https://i.postimg.cc/nrnBdcKR/bg-image-30.jpg);
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.all-projects-banner h2{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 5em;
+  color: #eee;
+  font-weight: 900;
+}
+.all-projects-banner .error *{
+  text-align: center;
+  color: #eee !important;
+}
+
+.all-projects{
+  /* height: 200vh; */
+  background: var(--lighting-bg);
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 90px 10px 50px;
+  backdrop-filter: blur(6px);
+}

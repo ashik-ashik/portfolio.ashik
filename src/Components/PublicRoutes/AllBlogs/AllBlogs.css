@@ -1,0 +1,30 @@
+.all-blogs-banner{
+  height: 90vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--text-hilight) url(https://i.postimg.cc/nrnBdcKR/bg-image-30.jpg);
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+.all-blogs-banner .error *{
+  color: var(--matching-color);
+}
+.all-blogs-banner h2{
+  color: var(--matching-color);
+  font-size: 5em;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1em;
+}
+
+.all-blogs{
+  padding: 100px 10px 60px;
+  backdrop-filter: blur(6px);
+  background: var(--lighting-bg);
+}

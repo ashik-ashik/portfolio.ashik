@@ -35,7 +35,7 @@ const Login = () => {
         }
       })
       .catch((err) => {
-        dispatch(error({message: err.message, code: err.response.status}))
+        dispatch(error({message: err.message, code: 401}))
       });
     }
     const [hover, setHover] = useState('in');
@@ -48,7 +48,7 @@ const Login = () => {
     }, [pass, email]);
     useEffect(()=>{
       if(state.isError){
-        toast("danger", "Error", state.error.message)
+        toast("danger", "Error " + state.error.code, state.error.message)
       }
     }, [state]);
 

@@ -21,6 +21,10 @@ import SingleBlogTemplate from './Components/Common/SingleBlogTemplate/SingleBlo
 import AllBlogs from './Components/PublicRoutes/AllBlogs/AllBlogs';
 import ManageProjects from './Components/Admin/Projects/ManageProjects';
 import AddProject from './Components/Admin/Projects/AddProject/AddProject';
+import EditProject from './Components/Admin/Projects/EditProject/EditProject';
+import SingleProjectTemplate from './Components/Common/SingleProjectTemplate/SingleProjectTemplate';
+import AllProjects from './Components/PublicRoutes/AllProjects/AllProjects';
+import axios from 'axios';
 // import 'animate.css/animate.compat.css';
 
   firebaseInit();
@@ -32,13 +36,17 @@ import AddProject from './Components/Admin/Projects/AddProject/AddProject';
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        dispatch(setUser(user.email))
+        axios.get(`http://localhost:5500/user/${user.email}`)
+        .then(res => {
+          dispatch(setUser({email: user.email, role:res.data.role}))
+        })
       } else {
         dispatch(setUser(""))
         
       }
     });
-  }, [dispatch])
+  }, [dispatch]);
+  
   
   return (
     <>
@@ -51,6 +59,8 @@ import AddProject from './Components/Admin/Projects/AddProject/AddProject';
             <Route path='authentication' element={<Authentication />}/>
             <Route path='blog/:id' element={<SingleBlogTemplate />}/>
             <Route path='all-blogs' element={<AllBlogs />}/>
+            <Route path='view_project/:id' element={<SingleProjectTemplate />}/>
+            <Route path='all-projects' element={<AllProjects />}/>
           </Route>
           <Route path="/panel" element={<AdminRoute><DashboardMain /></AdminRoute>} >
             <Route path="" element={<DashboardHome />} />
@@ -59,6 +69,7 @@ import AddProject from './Components/Admin/Projects/AddProject/AddProject';
             <Route path="edit-blog/:id" element={<EditBlog />} />
             <Route path="projects" element={<ManageProjects />} />
             <Route path="add-new-projects" element={<AddProject />} />
+            <Route path="edit-project/:id" element={<EditProject />} />
           </Route>
         </Routes>
       </Router>

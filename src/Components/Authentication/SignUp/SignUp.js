@@ -57,11 +57,13 @@ const SignUp = () => {
           // Signed in 
           const user = userCredential.user;
           dispatch(registerUser(user.email));
-          axios.post("https://personal-server-22.vercel.app/user", {
-              email: user.email
+          axios.post("http://localhost:5500/user", {
+              name: data.name,
+              email: user.email,
+              role: "visitor",
             })
             .then(res => {
-              console.log(res.status)
+              toast('success', "Sign Up", "Welcome ")
             })
           navigate("/");
         })
@@ -127,6 +129,24 @@ const SignUp = () => {
       {
         '& > :not(style)': {
           width: '100%'
+        },
+      }
+    }
+    noValidate autoComplete = "off" >
+    <TextField type = "text" {
+      ...register("name", {
+        required: true
+      })
+    }
+    label = "Full Name"
+    variant = "standard" / >
+    </Box> 
+    <Box component = "div"
+    sx = {
+      {
+        '& > :not(style)': {
+          width: '100%',
+          mt:"20px"
         },
       }
     }

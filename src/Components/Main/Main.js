@@ -223,7 +223,7 @@ const Main = () => {
               </ListItemButton>
             ))}
             {/* state.role === "admin" &&  */}
-          {state.email && <List>
+          {state.email && state.role === "admin" && <List>
               <ListItemButton as={Link} to="panel"
                 sx={{
                   minHeight: 48,

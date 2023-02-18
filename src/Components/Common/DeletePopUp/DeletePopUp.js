@@ -13,7 +13,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const  DeletePopup= ({open, setOpen, setAgreement, id}) => {
+const  DeletePopup= ({open, setOpen, setAgreement, id, title}) => {
   // const [open, setOpen] = React.useState(false);
 
 
@@ -35,7 +35,7 @@ const  DeletePopup= ({open, setOpen, setAgreement, id}) => {
         aria-describedby="alert-dialog-slide-description" 
         
       >
-        <DialogTitle style={{textAlign:"center"}}>{"Delete Blog?"}</DialogTitle>
+        <DialogTitle style={{textAlign:"center"}}>{"Delete "}{title} ?</DialogTitle>
         <DialogContent style={{minWidth:"400px", width:"90%", display:"flex", justifyContent:"center"}}>
           <DialogContentText id="alert-dialog-slide-description">
             <DeleteForeverIcon color="error" style={{fontSize:"5em"}} /> <br />

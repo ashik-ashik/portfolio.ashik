@@ -9,5 +9,9 @@ export const SETROLE = "SETROLE";
 export const ADDBLOG = "ADDBLOG";
 export const LOADBLOGS = "LOADBLOGS";
 export const DELETEBLOG = "DELETEBLOG";
+export const LOADPROJECTS = "LOADPROJECTS";
+export const POSTPROJECT = "POSTPROJECT";
+export const DELETEPROJECT = "DELETEPROJECT";
+
 
 

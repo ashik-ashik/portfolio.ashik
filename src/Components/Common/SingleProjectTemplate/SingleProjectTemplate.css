@@ -1,0 +1,33 @@
+.project-content{
+  width: 100%;
+}
+.project-content p{
+  word-wrap: break-word !important;
+  overflow-wrap: break-word;
+}
+.project-content pre.ql-syntax{
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  background: #f0f0f02b;
+  color: aqua;
+  padding: 15px 10px 0px 10px;
+  margin: 0;
+}
+.project-content *{
+  word-wrap: break-word !important;
+}
+.tag-tech-buttons{
+  display: inline-block;
+  padding: 4px 15px;
+  border: 1px solid var(--primary-color);
+  font-size: 12px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.project-link{
+  text-decoration: none;
+  color: var(--text-hilight);
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 15px;
+}

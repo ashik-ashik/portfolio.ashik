@@ -3,6 +3,10 @@
 .blog-content{
   background: var(--lighting-bg);
   color: var(--matching-color);
+  transition: transform 300ms !important;
+}
+.blog-card:hover{
+  transform: translateY(-10px);
 }
 .blog-card 
 .blog-content *{
