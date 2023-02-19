@@ -15,7 +15,7 @@ const SingleProjectTemplate = () => {
   const {state, dispatch} = useData();
 
   useEffect(()=>{
-    axios.get(`http://localhost:5500/project/${id}`)
+    axios.get(`https://personal-server-22-h7arc3im7-ashikfree999.vercel.app/project/${id}`)
     .then(res => {
       console.log(res);
       if(res.status === 200) {

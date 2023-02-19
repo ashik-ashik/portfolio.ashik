@@ -29,7 +29,7 @@ const EditProject = () => {
   const {id} = useParams();
   const [project, setProject] = useState(null);
   useEffect(()=>{
-    axios.get(`http://localhost:5500/project/${id}`)
+    axios.get(`https://personal-server-22-h7arc3im7-ashikfree999.vercel.app/project/${id}`)
     .then(res => {
       setProject(res.data);
     })
@@ -52,7 +52,7 @@ const EditProject = () => {
       content: description
 
     }
-    axios.put(`http://localhost:5500/project/${project._id}`, updatedData)
+    axios.put(`https://personal-server-22-h7arc3im7-ashikfree999.vercel.app/project/${project._id}`, updatedData)
     .then(res => {
       if(res.status === 200){
         toast("success", "Updated!", "The project has been updated!");

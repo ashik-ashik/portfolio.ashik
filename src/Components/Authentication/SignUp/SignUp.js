@@ -57,7 +57,7 @@ const SignUp = () => {
           // Signed in 
           const user = userCredential.user;
           dispatch(registerUser(user.email));
-          axios.post("http://localhost:5500/user", {
+          axios.post("https://personal-server-22-h7arc3im7-ashikfree999.vercel.app/user", {
               name: data.name,
               email: user.email,
               role: "visitor",

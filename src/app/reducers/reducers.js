@@ -1,4 +1,4 @@
-import { DELETEBLOG, DELETEPROJECT, ERROR, LOADBLOGS, LOADING, LOADPROJECTS, LOGIN, POSTPROJECT, REGISTER, RESETLOADING, RESETUSER, SETUSER } from "../actionTypes/actionTypes";
+import { DELETEBLOG, DELETEPROJECT, ERROR, LOADBLOGS, LOADING, LOADPROJECTS, LOADUSERS, LOGIN, POSTPROJECT, REGISTER, RESETLOADING, RESETUSER, SETUSER } from "../actionTypes/actionTypes";
 
 export const initialState = {
   email:"",
@@ -7,7 +7,8 @@ export const initialState = {
   isError: false,
   error:{},
   blogs: [],
-  projects:[]
+  projects:[],
+  users: []
 };
 
 const reducers = (state, action) => {
@@ -94,6 +95,11 @@ const reducers = (state, action) => {
         return {
           ...state,
           projects: [...state.projects.filter(project => project._id !== action.payload)]
+        }
+      case LOADUSERS :
+        return {
+          ...state,
+          users: action.payload
         }
 
     default :

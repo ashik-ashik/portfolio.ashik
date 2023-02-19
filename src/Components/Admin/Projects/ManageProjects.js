@@ -10,7 +10,7 @@ import ProjectCard from './ProjectCard/ProjectCard';
 const ManageProjects = () => {
   const {state, dispatch} = useData();
   useEffect(()=>{
-    axios.get("http://localhost:5500/projects")
+    axios.get("https://personal-server-22-h7arc3im7-ashikfree999.vercel.app/projects")
     .then(res => dispatch(loadProjects(res.data)))
     .catch(err => {
       dispatch(error({code: err.response?.status, message: err.message}));

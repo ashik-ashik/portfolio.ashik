@@ -15,7 +15,7 @@ const ManageBlogs = () => {
   const {state, dispatch} = useData();
   useEffect(()=> {
     axios
-      .get('http://localhost:5500/blogs')
+      .get('https://personal-server-22-h7arc3im7-ashikfree999.vercel.app/blogs')
       .then(response => {
         if(response.status===200){
           dispatch(loadBlogs(response.data || []))

@@ -41,6 +41,7 @@ body::-webkit-scrollbar-thumb{
   --lighting-bg : #5c5c5c50;
   --matching-color: #fff;
 }
+
 .my-theme > .blue-theme{
   --primary-color: #000;
   --secondary-color: #fff;
@@ -224,6 +225,10 @@ transition: background .5s;
 }
 img{
   max-width: 100%;
+}
+
+[aria-current="page"]{
+  color: var(--text-hilight) !important;
 }
 
 /* #application{

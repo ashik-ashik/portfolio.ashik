@@ -13,7 +13,7 @@ import "./AllBlogs.css";
 const AllBlogs = () => {
   const {state, dispatch}= useData();
   useEffect(()=>{
-    axios.get("http://localhost:5500/blogs")
+    axios.get("https://personal-server-22-h7arc3im7-ashikfree999.vercel.app/blogs")
     .then(res=> {
       dispatch(loadBlogs(res.data));
       console.log(res)

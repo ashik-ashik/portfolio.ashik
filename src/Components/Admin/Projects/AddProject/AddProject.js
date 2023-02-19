@@ -48,7 +48,7 @@ const AddProject = () => {
           liveLinks: [data.live, data.frontend, data.backend]
         }
         if (result.success) {
-          axios.post("http://localhost:5500/add-project", projectData).then(res => {
+          axios.post("https://personal-server-22-h7arc3im7-ashikfree999.vercel.app/add-project", projectData).then(res => {
             if (res.status === 200) {
               dispatch(addProject(projectData))
               toast("success", "Success", "Your Blog is Live Now!");

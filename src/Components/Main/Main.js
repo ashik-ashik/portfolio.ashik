@@ -125,14 +125,22 @@ const Main = () => {
   const [currentTheme, setCurrentTheme] = useState('dark-theme');
   const colorSwitch = themeName => {
     localStorage.setItem('themeColor', themeName);
-    setCurrentTheme(themeName)
+    setCurrentTheme(themeName);
+    
   };
+  const root = document.getElementById('root-body');
   useEffect(()=>{
     const getCurrentTheme = localStorage.getItem('themeColor');
     if(getCurrentTheme){
       setCurrentTheme(getCurrentTheme)
     }
-  },[currentTheme]);
+  },[currentTheme, root]);
+  
+  if(currentTheme === "dark-theme"){
+    root.style.background = "#1F2336";
+  }else{
+    root.style.background = "";
+  }
 
   const {state, dispatch} = useData();
   const handleSignOut = () => {

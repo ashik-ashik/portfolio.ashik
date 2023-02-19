@@ -27,7 +27,7 @@ const ProjectCard = ({project}) => {
     setOpen(true);
   }
   if(agree.agree){
-    axios.delete(`http://localhost:5500/project/${agree.id}`)
+    axios.delete(`https://personal-server-22-h7arc3im7-ashikfree999.vercel.app/project/${agree.id}`)
     .then(res => {
       if(res.status === 200) {
         setAgree({agree:false, id: null})

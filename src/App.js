@@ -36,7 +36,7 @@ import axios from 'axios';
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        axios.get(`http://localhost:5500/user/${user.email}`)
+        axios.get(`https://personal-server-22-h7arc3im7-ashikfree999.vercel.app/user/${user.email}`)
         .then(res => {
           dispatch(setUser({email: user.email, role:res.data.role}))
         })
@@ -45,6 +45,7 @@ import axios from 'axios';
         
       }
     });
+    
   }, [dispatch]);
   
   

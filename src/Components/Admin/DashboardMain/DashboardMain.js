@@ -36,9 +36,10 @@ import LockIcon from '@mui/icons-material/Lock';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { getAuth, signOut } from "firebase/auth";
 import { useData } from '../../../context/ContextProvider';
-import { error, resetUser } from '../../../app/actionCreators/actionCreators';
+import { error, loadBlogs, loadProjects, loadUsers, resetUser } from '../../../app/actionCreators/actionCreators';
 import { NavLink } from 'react-router-dom';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import axios from 'axios';
 
 const drawerWidth = 240;
 const openedMixin = (theme) => ({
@@ -124,6 +125,7 @@ const DashboardMain = () => {
 
   // 
   const [currentTheme, setCurrentTheme] = useState('dark-theme');
+  const root = document.getElementById('root-body');
   const colorSwitch = themeName => {
     localStorage.setItem('themeColor', themeName);
     setCurrentTheme(themeName)
@@ -135,6 +137,12 @@ const DashboardMain = () => {
     }
   },[currentTheme]);
 
+  if(currentTheme === "dark-theme"){
+    root.style.background = "#1F2336";
+  }else{
+    root.style.background = "";
+  }
+
   const {state, dispatch} = useData();
   const handleSignOut = () => {
     const auth = getAuth();
@@ -144,6 +152,25 @@ const DashboardMain = () => {
         dispatch(error({code: err.response.status, message: err.message}))
       });
   }
+
+  useEffect(()=> {
+    axios.get('http://localhost:5500/projects')
+    .then(res => dispatch(loadProjects(res.data)))
+    .catch(err => {
+      dispatch(error({code: err.response.status, message: err.message}));
+    });
+
+    axios.get('http://localhost:5500/blogs')
+    .then(res => dispatch(loadBlogs(res.data)))
+    .catch(err => {
+      dispatch(error({code: err.response.status, message: err.message}));
+    });
+    axios.get('http://localhost:5500/users')
+    .then(res => dispatch(loadUsers(res.data)))
+    .catch(err => {
+      dispatch(error({code: err.response.status, message: err.message}));
+    });
+  }, [dispatch])
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { DELETEBLOG, DELETEPROJECT, ERROR, LOADBLOGS, LOADING, LOADPROJECTS, LOGIN, POSTPROJECT, REGISTER, RESETLOADING, RESETUSER, SETUSER } from "../actionTypes/actionTypes"
+import { DELETEBLOG, DELETEPROJECT, ERROR, LOADBLOGS, LOADING, LOADPROJECTS, LOADUSERS, LOGIN, POSTPROJECT, REGISTER, RESETLOADING, RESETUSER, SETUSER } from "../actionTypes/actionTypes"
 
 export const loading = () => {
   return {
@@ -67,5 +67,11 @@ export const deleteProject = (id) => {
   return {
     type: DELETEPROJECT,
     payload: id,
+  };
+};
+export const loadUsers = (users) => {
+  return {
+    type: LOADUSERS,
+    payload: users,
   };
 };
